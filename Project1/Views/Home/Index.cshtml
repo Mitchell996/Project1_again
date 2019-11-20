@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<head>
+    <style>
+        .vl {
+            border-left: 6px solid black;
+            height: 500px;
+            color: black;
+            
+        }
+        p::before {
+            display: block;
+            white-space: pre;
+        } 
+    </style>
+</head>
+<body>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>User Profile</h2>
+        @Html.Raw(ViewBag.Name);
+        <img src="~/Content/Images/UserIcon.png" style="width:50%;"/>
+        <p>Welcome</p>
+        @Html.ActionLink("Login", "Action", "Controller", null, new { @class = "btn btn-primary btn-large" })
+        @Html.ActionLink("User info", "Index", "UserController", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+    <div class="col-md-1">
+        <div class="vl"></div>
+        </div>
+    <div class="col-md-7">
+        <h2>User Info</h2>
+        @Html.ActionLink("Create Goals", "Index", "Goal", null, new { @class = "btn btn-primary btn-large" })
+        <p></p>
+        @Html.ActionLink("Create tasks", "Create", "Task", null, new { @class = "btn btn-primary btn-large" })
+        <p></p>
+        @Html.ActionLink("ViewGoals", "Index", "Goal", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+    </div>
+</body>
