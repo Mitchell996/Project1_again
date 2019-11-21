@@ -3,39 +3,46 @@
 }
 <head>
     <style>
-        .vl {
-            border-left: 6px solid black;
+        .vl 
+        {
+            border-right: 6px solid black;
             height: 500px;
             color: black;
             
         }
-        p::before {
+        p::before 
+        {
             display: block;
             white-space: pre;
         } 
+        .body
+        {
+            height: 100%
+        }
     </style>
 </head>
 <body>
 
+
 <div class="row">
-    <div class="col-md-4">
-        <h2>User Profile</h2>
-        @Html.Raw(ViewBag.Name);
+    <div align="center" class="col-md-4 vl" style="background-color: rgba(13, 219, 238, 0.35)">
+        <h2>USER PROFILE</h2>
+        @Html.Raw(ViewBag.Name)
         <img src="~/Content/Images/UserIcon.png" style="width:50%;"/>
-        <p>Welcome</p>
+        <h3>Welcome</h3>
         @Html.ActionLink("Login", "Action", "Controller", null, new { @class = "btn btn-primary btn-large" })
         @Html.ActionLink("User info", "Index", "UserController", null, new { @class = "btn btn-primary btn-large" })
     </div>
-    <div class="col-md-1">
-        <div class="vl"></div>
-        </div>
-    <div class="col-md-7">
-        <h2>User Info</h2>
+    
+    <div align="center" class="col-md-7">
+        <h2>USER INFO</h2>
+        <br />
+
         @Html.ActionLink("Create Goals", "Index", "Goal", null, new { @class = "btn btn-primary btn-large" })
         <p></p>
-        @Html.ActionLink("Create tasks", "Create", "Task", null, new { @class = "btn btn-primary btn-large" })
+        @Html.ActionLink("Create Tasks", "Create", "Task", null, new { @class = "btn btn-primary btn-large" })
         <p></p>
-        @Html.ActionLink("ViewGoals", "Index", "Goal", null, new { @class = "btn btn-primary btn-large" })
+        @Html.ActionLink("View Goals", "Index", "Goal", null, new { @class = "btn btn-primary btn-large" })
     </div>
     </div>
 </body>
